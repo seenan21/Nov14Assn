@@ -12,11 +12,12 @@ function App() {
 
   return (
     <div className="App">
+      
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <h4>Type to add book here:</h4>
 
         <AddBookForm books = {books} setBooks={setBooks}  />        
-        <Booklist books = {books} />
+        <Booklist books = {books} setBooks={setBooks}/>
        
       </header>
     </div>
