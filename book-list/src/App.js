@@ -1,14 +1,33 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Booklist from './Booklist';
 import AddBookForm from './AddBookForm';
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import config from "./services/config.json";
+import axios from "axios";
 
 
 
 function App() {
-  const [books, setBooks] = useState(["The Alchemist", "The Art of War", "The 48 Laws of Power"]);
+  const [books, setBooks] = useState([]);
+  
+
+  useEffect(() => {
+    axios.get('https://' + config["apiKey"] + ".mockapi.io/books")
+    .then(response => {
+      const newBooks = response.data.map(book => book["title"]);
+      setBooks(newBooks);
+      
+    })
+    .catch(error => {
+      console.log(error);
+    });
+
+  }, []
+  );
+
+ 
+  
 
   return (
     <div className="App">
