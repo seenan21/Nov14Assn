@@ -3,13 +3,15 @@ import './App.css';
 import Booklist from './Booklist';
 
 function App() {
+  const books = ["The Alchemist", "The Art of War", "The 48 Laws of Power"];
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
 
-        {/* Add the Booklist component here */}
-        <Booklist />
+       
+        <Booklist books = {books} />
        
       </header>
     </div>
