@@ -1,11 +1,14 @@
+import React, { useState } from 'react';
+
+
 const Booklist = (props) =>{
-    
+    const books = props.books;
 
     return (
         <div>
             <h1>Booklist</h1>
             <ul>
-                {props.books.map((book, index) => (
+                {books.map((book, index) => (
                     <li key={index}>{book}</li>
                 ))}
             </ul>
